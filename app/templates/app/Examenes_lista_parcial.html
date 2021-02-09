@@ -1,0 +1,10 @@
+% for examen in lista_examenes %}
+  <tr>
+    <td>{{ examen.nombre }}</td>
+    
+  </tr>
+{% empty %}
+  <tr>
+    <td colspan="7" class="text-center bg-warning">No hay examenes</td>
+  </tr>
+{% endfor %}

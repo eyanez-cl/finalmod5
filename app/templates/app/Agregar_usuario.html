@@ -1,0 +1,77 @@
+
+{% extends "base_privada.html" %}
+{% load static %}
+
+
+        {% block imagenperfil %}
+            <img class="img-fluid rounded" src="{% static 'app/img/profe luis.jpg' %}">
+        {% endblock imagenperfil %}
+
+        <!-- MAIN -->
+        {% block main %}
+
+        <div class="col py-3">
+            <div class="block-header">
+                <h2>Agregar Usuario</h2>
+                <small class="text-muted"></small>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 col-md12 col-sm-12">
+                    <div class="card">
+                        <div class="body">
+                            <div class="row">
+                                <button type="button" id="boton-js" class="btn btn-info mb-4"   data-toggle="modal" data-target="#form">
+                                    Ingresar Usuario
+                                </button>  
+                                <table class="table">
+                                    <thead class="thead-inverse">
+                                      
+                                      <tr>
+                                        <th>#</th>
+                                        <th>Nombre</th>
+                                        <th>Rut</th>
+                                        <th>Tipo de Examen</th>
+                                        <th>Nombre Medico Tratante</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody id="Datos">
+                                      {% comment %} hacer for de examenes {% endcomment %}
+                                    </tbody>
+                                  </table>
+                            </div>
+                        </div>
+                    
+                          <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                               
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--row-->
+        <!-- Main Col END -->
+    </div>
+    <!-- body-row END -->
+    {% endblock main %}
+    
+    {%block footer%}
+    <footer class="footer fixed.bottom bg-dark text-center">
+        <p class="text-muted">&copy; 2020 Awakelab.</p>
+        <p class="text-muted">Grupo Full Stack Python</p>
+    </footer>
+    {% endblock footer %}
+
+ 
+    {% block script %}   
+    <script src="{% static 'app/js/main.js' %}"></script>
+    {% endblock script %}
+</body>
+
+</html>

@@ -1,0 +1,300 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+      
+      {%block jumbotron%}
+
+      <div class="container-fluid bg-principal" id="principal">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="jumbotron jumbotron-main">
+              <h2>Medical Register</h2>
+              <h3>Sistema de registro medico online</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Section: Principal -->
+      {% endblock jumbotron%}
+
+    {% block noticias %}
+      <!-- Section: Noticia -->
+      <div class="container-fluid bg-light" id="noticia">
+        <div class="row">
+          <h3>Noticias</h3>
+        </div>
+        <div class="row">
+          <div id="team-carousel" 
+              class="carousel slide" 
+              data-ride="carousel" 
+              data-interval="3000">
+            <div class="carousel-inner" style="padding: 4rem;" role="listbox">
+              <div style="height: 400px" class="carousel-item active">
+                <img class="d-block img-fluid carousel-img" src="{% static 'app/img/mieltopica.jpg' %}">
+                <div class="carousel-caption">
+                  La mucositis es una respuesta inflamatoria de las células epiteliales de la mucosa a los efectos citotóxicos de la quimioterapia y la radioterapia. El síntoma principal de la mucositis oral es el dolor oral severamente debilitante. Además aumenta la susceptibilidad a las infecciones, lo que puede ocasionar la muerte del paciente por infecciones y poner en compromiso el tratamiento para el cáncer. Se han usado varios tratamientos para prevenir o reducir la gravedad moderada de la mucositis oral, aunque los resultados no han sido contundentes.
+                </div>
+              </div>
+              <div style="height: 400px" class="carousel-item">
+                <img class="d-block img-fluid carousel-img" src="{% static 'app/img/sistemainmunologico.jpg' %}">
+                <div class="carousel-caption">
+                  En los últimos años, los científicos han descubierto algunos vínculos interesantes entre la inmunidad y la mente. De hecho, una de las moléculas de señalización inmunitaria, o citosinas, que median estos enlaces se llama interleucina-17a (IL-17a)
+                </div>
+              </div>
+              <div style="height: 400px" class="carousel-item">
+                <img class="d-block img-fluid carousel-img" src="{% static 'app/img/vph.jpg' %}">
+                <div class="carousel-caption">
+                  Las células epiteliales receptoras tienen un papel fundamental en el ciclo de los VPH, en cuanto al crecimiento y diferenciación. A través de lesiones, heridas y laceraciones del tejido el virus entra en las células, sobre todo en las capas más profundas del epitelio.
+                </div>
+              </div>
+              <div style="height: 400px" class="carousel-item">
+                <img class="d-block img-fluid carousel-img" src="{% static 'app/img/mascarilla.jpg' %}">
+                <div class="carousel-caption">
+                  Las células epiteliales receptoras tienen un papel fundamental en el ciclo de los VPH, en cuanto al crecimiento y diferenciación. A través de lesiones, heridas y laceraciones del tejido el virus entra en las células, sobre todo en las capas más profundas del epitelio.
+                </div>
+              </div>
+              <div style="height: 400px" class="carousel-item">
+                <img class="d-block img-fluid carousel-img" src="{% static 'app/img/hospital.jpg' %}">
+                <div class="carousel-caption">
+                  Clínica Las Condes continuó mostrando números rojos en el tercer trimestre. Anotó pérdidas por $1.937,8 millones en el tercer trimestre, acumulando en el año un saldo negativo de $12.234,9 millones.              </div>
+                </div>
+              </div> 
+              <div style="height: 400px" class="carousel-item">
+                <img class="d-block img-fluid carousel-img" src="{% static 'app/img/jovenes.png' %}">
+                <div class="carousel-caption">
+                  Las primeras etapas de la pandemia de coronavirus y el primer confinamiento por covid-19 hicieron que la cantidad de jóvenes con ansiedad casi que se duplicara, según un estudio de la Universidad de Bristol.                </div>
+              </div>  
+            <a class="left carousel-control" 
+                href="#team-carousel" 
+                role="button" 
+                data-slide="prev">
+              <span class="icon-prev" aria-hidden="true"></span>
+            </a>
+            <a class="right carousel-control" 
+                href="#team-carousel" 
+                role="button" 
+                data-slide="next">
+              <span class="icon-next" aria-hidden="true"></span>
+            </a>
+            <ol class="carousel-indicators">
+              <li data-target="#team-carousel" 
+                  data-slide-to="0" 
+                  class="active"></li>
+              <li data-target="#team-carousel" 
+                  data-slide-to="1"></li>
+              <li data-target="#team-carousel" 
+                  data-slide-to="2"></li>
+              <li data-target="#team-carousel" 
+                  data-slide-to="3"></li>
+              <li data-target="#team-carousel" 
+                  data-slide-to="4"></li>
+              <li data-target="#team-carousel" 
+                  data-slide-to="5"></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    {% endblock noticias %}
+
+    
+    {% block enlaces %}
+
+      <div class="container-fluid bg-dark" id="enlaces">
+        <div class="row">
+            <h3>Enlaces de Interés</h3>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="media">
+              <img class="img" src="{% static 'app/img/isapres_720.jpg' %}" 
+                  alt="Generic placeholder image">
+              <div class="media-body">
+                <h5>Isapres</h5>
+                <ul>
+                  <li>Banmedica <a href="https://www.banmedica.cl/">Ver más</a></li>
+                  <li>Nueva Mas Vida <a href="https://www.nuevamasvida.cl/">Ver más</a></li>
+                  <li>Colmena <a href="http://www.colmena.cl/">Ver más</a></li>
+                  <li>Cruz Blanca <a href="https://www.cruzblanca.cl/">Ver más</a></li>
+                  <li>Consalud <a href="https://clientes.consalud.cl/">Ver más</a></li>
+                  <li>Vida Tres <a href="https://www.vidatres.cl/">Ver más</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="media">
+              <img class="img" src="{% static 'app/img/ambulancias.png' %}" 
+                  alt="Generic placeholder image">
+              <div class="media-body">
+                <h5>Ambulancias en Convenio</h5>
+                <ul>
+                  <li>Help <a href="https://www.help.cl/">Ver más</a></li>
+                  <li>Unidad Coronaria Movil <a href="https://www.ucmchile.cl/">Ver más</a></li>                
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="media">
+              <img class="img" src="{% static 'app/img/clinicas.jpg' %}" 
+                  alt="Generic placeholder image">
+              <div class="media-body">
+                <h5>Clinicas en Convenio </h5>
+                <ul>
+                    <li>Alemana <a href="https://www.clinicaalemana.cl/">Ver más</a></li>
+                    <li>las Condes <a href="https://www.clinicalascondes.cl/">Ver más</a></li>
+                    <li>Santa Maria <a href="https://www.clinicasantamaria.cl/">Ver más</a></li>
+                    <li>U andes <a href="https://www.clinicauandes.cl/">Ver más</a></li>
+                    <li>Davila <a href="https://www.davila.cl/">Ver más</a></li>
+                    <li>Indisa <a href="https://www.indisa.cl/">Ver más</a></li>
+                    <li>UC Christus <a href="https://www.ucchristus.cl/">Ver más</a></li>
+                    <li>Redsalud <a href="https://www.redsalud.cl/">Ver más</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="media">
+              <img class="img-2" src="{% static 'app/img/fonasa.jpg' %}" 
+                  alt="Generic placeholder image">
+              <div class="media-body">
+                <h5>Fonasa</h5>
+                <ul>
+                  <li>Fonasa <a href="https://www.fonasa.cl/">Ver más</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endblock enlaces %}
+
+      {% block contacto %}
+      <div class="container-fluid bg-light" id="contacto">
+        <div class="row">
+          <h1>Contáctanos</h1>
+        </div>
+        <div class="row justify-content-center align-items-center h-100">
+          <div class="col-sm-6" id="contact-form">
+            <form>
+              <div class="form-group">
+                <label for="contact-name"><h2>Nombre</h2></label>
+                <input type="text" class="form-control" id="contact-name" 
+                    placeholder="Tu Nombre">
+              </div>
+              <div class="form-group">
+                <label for="contact-email"><h2>Email</h2></label>
+                <input type="email" class="form-control" id="contact-email" 
+                    placeholder="Tu Email">
+              </div>
+              <div class="form-group">
+                <label for="contact-msg"><h2>Mensaje</h2></label>
+                <textarea class="form-control" id="contact-msg" 
+                    placeholder="Tu Mensaje" rows="4"></textarea>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline-secondary">Enviar</button>
+                <button type="button" class="btn btn-outline-secondary">Limpiar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    {% endblock contacto %}
+
+    {% block footer %}
+      <footer class="footer bg-dark text-center">
+        <p class="text-muted">&copy; 2020 Awakelab.</p>
+        <p class="text-muted">Grupo Full Stack Python</p>
+      </footer>
+    {% endblock footer %}
+
+         <!-- Login -->
+     {% block login %}
+
+        <!-- MODAL FORMS -->
+      <div class="modal" id="profile-modal" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"
+                aria-label="Close"><span aria-hidden="true">&times;</span>
+              </button>
+              <p class="modal-title" id="profile-modal-label">Perfil</p>
+            </div>
+              <div class="modal-body">
+                Perfil
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-success">Guardar</button>
+                <button type="button" 
+                    class="btn btn-secondary" 
+                    data-dismiss="modal">Cancelar</button>
+              </div>
+          </div>
+      </div>
+      </div>
+      <div class="modal" id="settings-modal" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" 
+                aria-label="Close"><span aria-hidden="true">&times;</span>
+              </button>
+              <p class="modal-title" id="settings-modal-label">Configuración</p>
+            </div>
+            <div class="modal-body">
+              Configuración
+            </div>
+            <div class="modal-footer">
+              <button type="button" 
+                  class="btn btn-success">Guardar</button>
+              <button type="button" 
+                  class="btn btn-secondary" 
+                  data-dismiss="modal">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END MODAL FORMS -->
+    </div>  
+
+     <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+           <form action="{% url 'app:login' %}" method="POST" novalidate >
+           {% csrf_token %}
+          <div class="modal-body mx-3">
+               {{formulario.as_table}}
+             {% comment %} <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+              </div>  {% endcomment %}
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock login %}
+
+
+  {% block script %}
+  
+  {% endblock script %}

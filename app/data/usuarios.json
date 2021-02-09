@@ -1,0 +1,24 @@
+{
+    "usuarios":[
+        {
+            "email":"juanito@awake.cl",
+            "clave": "123456"
+        },
+        {
+            "email":"matias@awake.cl",
+            "clave": "123456"
+        },
+        {
+            "email":"jose@awake.cl",
+            "clave": "123456"
+        },
+        {
+            "email":"luis@awake.cl",
+            "clave": "123456"
+        },
+        {
+            "email":"jona@awake.cl",
+            "clave": "123456"
+        }
+    ]
+}

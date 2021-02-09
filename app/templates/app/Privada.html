@@ -1,0 +1,221 @@
+{% extends "base_privada.html" %}
+{% load static %}
+
+
+         {% block imagenperfil %}
+                <img class="img-fluid rounded" src="{% static 'app/img/profe luis.jpg' %}">
+         {% endblock imagenperfil %}
+
+        {% block main %}
+        <div class="col py-3">
+            <div class="block-header">
+                <h2>Perfil Paciente</h2>
+                <small class="text-muted"></small>
+            </div>
+    
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12">
+                    <div class="card profile">
+                        <img class="img-fluid" src="{% static 'app/img/TiCn5dVo_400x400.jpg' %}" alt="">
+                    </div>
+                    <div class="card">
+                        <div class="header">
+                            <h2>Acerca del paciente</h2>
+                        </div>
+                        <div class="body">
+                            <strong>Nombre</strong>
+                            <p>Luis Jaraquemada</p>
+                            <strong>Occupation</strong>
+                            <p>Linux Lover</p>
+                            <strong>Email</strong>
+                            <p>norecuerdoelEmail@gmail.com</p>
+                            <strong>Telefono</strong>
+                            <p>+5691506045</p>
+                            <hr>
+                            <strong>Direccion</strong>
+                            <address>pasaje #1000,Santiago</address>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-8 col-md12 col-sm-12">
+                    <div class="card">
+                        <div class="body">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#Resumen">
+                                        Resumen
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#Historial">
+                                        Historial
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="Resumen" class="tab-pane fade show active" role="tabpanel">
+                                    <div class="wrap-reset">
+                                        <div class="wrap-reset">
+                                            <div class="post-list">
+                                                <div class="post-box">
+                                                    <p>Paciente presenta hipertension y colesterol alto
+                                                        El 11 de Noviembre se deriva al cardiologo Mario Adad para toma de examenes
+                                                        El 22 de Noviembre se toma un electrocardiograma que aparece inconcluso
+                                                        Se le agenda citas para diciembre y Enero para toma de mas examenes
+                                                    </p>
+                                                    <p>Glucosa del Paciente se muestra alta
+                                                        El 11 de Noviembre se le deriva a la doctora Monserrat 
+                                                        La Doctora Monserrat lo encuentra prediabetico el 22 de Noviembre
+                                                        Se le da regimen al paciente 
+                                                        Se le agendan visitas periodicas para Diciembre y Enero
+                                                    </p>
+                                                    <hr>
+                                                    <div class="post-box">
+                                                        <h4>Reporte general</h4>
+                                                        <div class="body p-1-0 p-r-0">
+                                                            <ul class="list-unstyled">
+                                                                <li>
+                                                                    <div>Presion Arterial</div>
+                                                                    <div class="progress m-b-20">
+                                                                        <div class="progress-bar bg-success progress-bar-striped active"
+                                                                            role="progressbar" aria-valuenow="40"
+                                                                            aria-valuemin="0" aria-valuemax="100"
+                                                                            style="width: 40%"> <span class="sr-only">40%
+                                                                                Complete (success)</span> </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div>Ritmo Cardiaco</div>
+                                                                    <div class="progress  m-b-20">
+                                                                        <div class="progress-bar bg-info progress-bar-striped active"
+                                                                            role="progressbar" aria-valuenow="20"
+                                                                            aria-valuemin="0" aria-valuemax="100"
+                                                                            style="width: 20%"> <span class="sr-only">20%
+                                                                                Complete</span> </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div>Hemoglobina</div>
+                                                                    <div class="progress  m-b-20">
+                                                                        <div class="progress-bar bg-warning progress-bar-striped active"
+                                                                            role="progressbar" aria-valuenow="60"
+                                                                            aria-valuemin="0" aria-valuemax="100"
+                                                                            style="width: 60%"> <span class="sr-only">60%
+                                                                                Complete (warning)</span> </div>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div>Azúcar</div>
+                                                                    <div class="progress">
+                                                                        <div class="progress-bar bg-danger progress-bar-striped active"
+                                                                            role="progressbar" aria-valuenow="80"
+                                                                            aria-valuemin="0" aria-valuemax="100"
+                                                                            style="width: 80%"> <span class="sr-only">80%
+                                                                                Complete (danger)</span> </div>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div><!--Box-->
+                                                    <hr>
+                                                    <h4>Educacion</h4>
+                                                    <ul class="dis">
+                                                        <li> Ingeniero Informatico</li>
+                                                        <li>Universidad</li>
+                                                        <li>Diplomado en Python.</li>
+                                                        <li>Diplomado en Javascript</li>
+                                                        <li>Bootcamp Full stack Python.</li>
+                                                    </ul>
+                                                    <hr>
+                                                    <h4>Historial de visitas</h4>
+                                                    <ul class="dis">
+                                                        <li>11 de Noviembre Doctor Garcia Adad</li>
+                                                        <li>22 de Noviembre Doctora Monserrat</li>
+                                                        <li>8 y 24 de Diciembre cita con Doctora Monserrat</li>
+                                                        <li>14 de Diciembre cita con Doctor Garcia Adad</li>
+                                                        <li>12 de Enero cita con Doctora Monserrat</li>
+                                                        <li>20 de Enero cita con Doctor Garcia Adad</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="Historial">
+                                    <div class="timeline-body">
+                                        <div class="timeline m-border">
+                                            <div class="timeline-item">
+                                                <div class="item-content">
+                                                    <div class="text-small">Ahora</div>
+                                                    <p>Sin Cambios.</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-item border-info">
+                                                <div class="item-content">
+                                                    <div class="text-small">11:30</div>
+                                                    <p>chequeo de rutina</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-item border-warning border-l">
+                                                <div class="item-content">
+                                                    <div class="text-small">10:30</div>
+                                                    <p>Operacion</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-item border-warning">
+                                                <div class="item-content">
+                                                    <div class="text-small">hace 3 dias</div>
+                                                    <p>chequeo de rutina</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-item border-danger">
+                                                <div class="item-content">
+                                                    <div class="text--muted">Viernes , 30 Marzo</div>
+                                                    <p>chequeo de rutina</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-item border-info">
+                                                <div class="item-content">
+                                                    <div class="text-small">Lunes, 10 Marzo</div>
+                                                    <p>chequeo de rutina</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-item border-danger">
+                                                <div class="item-content">
+                                                    <div class="text-small">Martes, 20 Febrero</div>
+                                                    <p>Test de Sangre</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-item border-info">
+                                                <div class="item-content">
+                                                    <div class="text-small">Jueves, 17 Enero</div>
+                                                    <p>Ingreso Pasiente N° 80</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+            <!--row-->
+    
+        </div>
+        <!-- Main Col END -->
+    
+    {% endblock main %}
+
+    {% block footer %}
+    <footer class="footer fixed.bottom bg-dark text-center">
+        <p class="text-muted">&copy; 2020 Awakelab.</p>
+        <p class="text-muted">Grupo Full Stack Python</p>
+    </footer>
+    {% endblock footer %}
+
+    {% block script %}
+        {% comment %} <script src="js/main.js"></script> {% endcomment %}
+    {% endblock script %}

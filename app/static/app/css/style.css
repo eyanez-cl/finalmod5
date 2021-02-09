@@ -1,0 +1,226 @@
+/*
+Awakelab
+Full Stack Python 2020
+*/
+/*JOSE LUIS GUERRA PACHECO*/
+
+#competencias, 
+#contacto {
+    padding: 50px;
+    max-height: 700px;
+}
+
+#contacto h1{
+    font-family: 'Bebas Neue', cursive;
+    color: black;
+    font-size: 50px;
+}
+#contacto h2 {
+    font-family: 'Bebas Neue', cursive;
+    color: black;
+    font-size: 20px;
+}
+#principal {
+    padding: 100px 5% 20px;
+    min-height: 300px;
+}
+#principal h2{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 80px; 
+    color: wheat;
+}
+
+.bg-principal{
+    padding:100px;
+}
+
+#competencias > div >  h3 {
+    color: white;
+}
+
+#noticia {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+#noticia h3 {
+    font-family: 'Bebas Neue', cursive;
+    padding-left: 50px;
+    font-size: 50px;
+}
+
+#enlaces {
+    color:white;
+    padding-top: 60px;
+    min-height: 100%;
+}
+
+#enlaces h3 {
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    padding-left: 50px;
+    font-size: 50px;
+}
+
+#medicalr{
+    font-size: 30px;
+}
+.navbar a {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navbar-dark {
+    background-color:black;
+}
+
+h4, h5, h6, .navbar, .modal { 
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+}
+
+
+.bg-principal {
+    background-image: url('../img/auditoria.jpg');
+    background-size: 200px;
+}
+
+.jumbotron {
+    color: white;
+    background: rgb(0, 0, 0); /* Para navegadores antiguos */
+    background: rgba(0, 0, 0, 0.5); 
+ }
+
+.media {
+    margin: 20px 5% 50px 10%;
+}
+
+textarea { 
+    resize: none; 
+}
+
+.footer p {
+    display: inline;
+}
+
+
+#team-carousel {
+ margin: auto;
+}
+.carousel-img { 
+    max-width: 100% !important;
+}
+
+.carousel-inner {
+    width: auto;
+    text-align: center;
+}
+/*JOSE LUIS GUERRA PACHECO*/
+
+
+/*PAMMS*/
+
+.img {width: 300px;
+  border-radius: 15%;}
+
+.img-2 {width: 20%;
+  border-radius: 15%;}
+
+footer {font-family: 'Bebas Neue';
+      text-align: center;
+      font-weight: bold;}
+
+/*PAMMS*/
+
+
+ul {list-style-type: none;}
+body {font-family: 'Bebas Neue', cursive;}
+
+  /* Calendario Header */
+
+h1 {text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-weight: lighter;
+  color: whitesmoke;
+}
+
+.media-body{
+  margin-left:25px ;
+
+}
+
+/* Mes Header */
+.month {
+  font-family: 'Bebas Neue';
+  padding: 70px 25px;
+  width: 100%;
+  background: #95b3da;
+  text-align: center;
+}
+
+/* Month list */
+.month ul {
+  margin: 20px;
+  padding: 20px;
+}
+
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* Boton anterior mes header */
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+/* Next Button */
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+/* Weekdays (Lunes-Domingo) */
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color:#ddd;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #666;
+  text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+  padding: 10px 0;
+  background: #eee;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: #777;
+}
+/* Destacar Cita Medico */
+.days li .cita {
+  padding: 5px;
+  background: #295250;
+  color: white !important
+}
+/* Destacar el dia de hoy */
+.days li .active {
+  padding: 5px;
+  background: #1abc9c;
+  color: white !important
+}
