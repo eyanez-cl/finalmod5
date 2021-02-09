@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 from django.http import JsonResponse
 from django.template.loader import render_to_string
-from .forms import Login, Examen
+from .forms import Login, Examen, FormularioPacientes
 
 
 # Create your views here.
@@ -54,6 +54,22 @@ def listar_examenes(request):
     #     context = {'formulario':formulario}    
         return render(request,'app/Examenes.html')
 
+
+
+
+    # if request.method == "POST":
+    #     formulario_lleno = Examen(request.POST)
+    #     if formulario_lleno.is_valid() == True:
+    #         data = formulario_lleno.cleaned_data
+    #         filename = "/app/data/examenes.json"
+    #         with open(str(settings.BASE_DIR)+filename,'w') as file:
+    #             pass
+                
+        
+def agendar(request):
+    return render(request,'app/Agendar.html')
+
+
 def crear_examen(request):
     data = dict() # pa meter cosas 
     
@@ -77,19 +93,61 @@ def crear_examen(request):
     return JsonResponse(data)
 
 
-    # if request.method == "POST":
-    #     formulario_lleno = Examen(request.POST)
-    #     if formulario_lleno.is_valid() == True:
-    #         data = formulario_lleno.cleaned_data
-    #         filename = "/app/data/examenes.json"
-    #         with open(str(settings.BASE_DIR)+filename,'w') as file:
-    #             pass
-                
-        
-def agendar(request):
-    return render(request,'app/Agendar.html')
+#def agregar_usuario(request):
+    data = dict() # pa meter cosas 
+    
+    if request.method == 'POST':
+        formulario = FormularioPacientes(request.POST)
+        if formulario.is_valid():
+            #hacer algoooo Lista de examenes formulario_clean_data
+            data['formulario_is_valid'] = True
+            data['html_usuarios_list '] = render_to_string('app/usuario_lista _parcial.html',{'lista_usuarios': lista_usuarios })            
+        else:
+            data['formulario_is_valid'] = False
+            
+    else:
+        formulario = FormularioPacientes()
+        print(dir(formulario))
+        context = {'formulario': formulario}
+        data['html_formulario'] = render_to_string('app/usuario_parcial.html',
+                                 context,
+                                 request = request,
+                                 )
+    return JsonResponse(data)
 
 
 def agregar_usuario(request):
+    data = dict()
+    if request.method == 'GET':
+        formulario = FormularioPacientes()
+        context = {'formulario': formulario}
+        return render(request,'app/Agregar_usuario.html',context)
+
+    elif request.method == 'POST':
+        print('El post contiene:', request.POST)
+        
+        formulario_devuelto = FormularioPacientes(request.POST)
+        
+        if formulario_devuelto.is_valid() == True:
+            datos_formulario = formulario_devuelto.cleaned_data
+            datos_formulario['fecha_nacimiento']= datos_formulario['fecha_nacimiento'].strftime("%Y-%m-%d")
+            datos_formulario['fecha_toma_examen']= datos_formulario['fecha_toma_examen'].strftime("%Y-%m-%d")
+            print ('los datos limpios del formulario son: ', datos_formulario)
+            filename = 'app/data/pacientes.json'
+            with open(str(settings.BASE_DIR)+ filename, 'r') as file:
+                pacientes = json.load(file)
+                pacientes['pacientes'].append(datos_formulario)
+            with open(str(settings.BASE_DIR)+ filename, 'w') as file:
+                json.dump(pacientes, file)
+            context= {'lista pacientes': pacientes['pacientes']}
+            #return render(request, 'app/agregar_usuario_exitoso.html', context) 
+        else:
+            context= {'formulario': formulario_devuelto}
+            return render(request, 'app/Agregar_usuario.html', context)
+        
+def agregar_usuario_exitoso(request):
+    pacientes = []
+    context= {'pacientes': pacientes}
+    return render(request, 'app/agregar_usuario_exitoso.html', context)
+
     
-    return render(request,'app/Agregar_usuario.html')
