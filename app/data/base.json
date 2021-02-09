@@ -1,0 +1,104 @@
+{
+    "pacientes": [
+        {
+            "correo": "juanito@awake.cl",
+            "clave": "123456",
+            "rut": "00.000.000-0",
+            "nombre": "Juan",
+            "edad": 57,
+            "fecha_nacimiento": "2020-12-12",
+            "examenes": [
+                {
+                    "fecha": "2020-12-01",
+                    "hemograma": 140,
+                    "orina": 200,
+                    "colesterol": {
+                        "bueno": 200,
+                        "malo": 100
+                    },
+                    "glucosa": 150
+                }
+            ]
+        },
+        {
+            "correo": "jose@awake.cl",
+            "clave": "123456",
+            "rut": "00.000.000-0",
+            "nombre": "Fence",
+            "edad": 40,
+            "fecha_nacimiento": "2020-12-12",
+            "examenes": [
+                {
+                    "fecha": "2020-12-01",
+                    "hemograma": 140,
+                    "orina": 200,
+                    "colesterol": {
+                        "bueno": 200,
+                        "malo": 100
+                    },
+                    "glucosa": 150
+                }
+            ]
+        },
+        {
+            "correo": "matias@awake.cl",
+            "clave": "123456",
+            "rut": "00.000.000-0",
+            "nombre": "Matias",
+            "edad": 30,
+            "fecha_nacimiento": "2020-12-12",
+            "examenes": [
+                {
+                    "fecha": "2020-12-01",
+                    "hemograma": 140,
+                    "orina": 200,
+                    "colesterol": {
+                        "bueno": 200,
+                        "malo": 100
+                    },
+                    "glucosa": 150
+                }
+            ]
+        },
+        {
+            "correo": "luis@awake.cl",
+            "clave": "123456",
+            "rut": "00.000.000-0",
+            "nombre": "Luis",
+            "edad": 67,
+            "fecha_nacimiento": "2020-12-12",
+            "examenes": [
+                {
+                    "fecha": "2020-12-01",
+                    "hemograma": 140,
+                    "orina": 200,
+                    "colesterol": {
+                        "bueno": 200,
+                        "malo": 100
+                    },
+                    "glucosa": 150
+                }
+            ]
+        },
+        {
+            "correo": "jona@awake.cl",
+            "clave": "123456",
+            "rut": "00.000.000-0",
+            "nombre": "Jonathan",
+            "edad": 70,
+            "fecha_nacimiento": "2020-12-12",
+            "examenes": [
+                {
+                    "fecha": "2020-12-01",
+                    "hemograma": 140,
+                    "orina": 200,
+                    "colesterol": {
+                        "bueno": 200,
+                        "malo": 100
+                    },
+                    "glucosa": 150
+                }
+            ]
+        }
+    ]
+}

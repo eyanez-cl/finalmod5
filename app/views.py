@@ -10,9 +10,10 @@ from .forms import Login, Examen
 
 # Create your views here.
 
-def buscar(email,clave,usuarios):
-    for item in usuarios['usuarios']:
-        if item['email'] == email and item['clave'] == clave:
+def buscar(email,clave,pacientes):
+    for item in pacientes:
+        print(item['correo'],item['clave'])
+        if item['correo'] == email and item['clave'] == clave:
             return True
     
 def inicio(request):
@@ -28,10 +29,11 @@ def login_user(request):
         formulario_lleno = Login(request.POST)
         if formulario_lleno.is_valid() == True:
             data = formulario_lleno.cleaned_data
-            filename = "/app/data/usuarios.json"
+            print(data)
+            filename = "/app/data/base.json"
             with open(str(settings.BASE_DIR)+filename,'r') as file:
-                contactos = json.load(file)   
-            validar = buscar(data['email'],data['clave'],contactos)
+                pacientes = json.load(file)   
+            validar = buscar(data['email'],data['clave'],pacientes['pacientes'])
             if validar == True:
                 return redirect('app:private')
             else:
