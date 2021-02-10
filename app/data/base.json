@@ -1,15 +1,1 @@
-{
-    "pacientes": [
-        {
-            "nombre": "juantito",
-            "rut": "15896752-2",
-            "edad": "36",
-            "fecha": "1905-01-01",
-            "hemograma": "360",
-            "orina": "450",
-            "colesterolhdl": "450",
-            "colesterolldl": "65",
-            "glucosa": "110"
-        }
-    ]
-}
+{"ultimo_id": 4, "examenes": [{"nombre": "juantito", "rut": "15896752-2", "id": 1, "edad": "36", "fecha": "1905-01-01", "hemograma": "360", "orina": "450", "colesterolhdl": "450", "colesterolldl": "65", "glucosa": "110"}, {"nombre": "juantito", "rut": "15896752-2", "edad": "36", "fecha": "1900-01-01", "hemograma": "560", "orina": "450", "colesterolhdl": "350", "colesterolldl": "65", "glucosa": "110", "id": 2}, {"nombre": "luis", "rut": "15896752-2", "edad": "56", "fecha": "1900-01-01", "hemograma": "560", "orina": "680", "colesterolhdl": "450", "colesterolldl": "380", "glucosa": "490", "id": 3}, {"nombre": "juantito", "rut": "15896752-2", "edad": "36", "fecha": "1900-01-01", "hemograma": "360", "orina": "429", "colesterolhdl": "450", "colesterolldl": "465", "glucosa": "490", "id": 4}]}

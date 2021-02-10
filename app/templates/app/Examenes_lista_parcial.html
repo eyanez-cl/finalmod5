@@ -3,6 +3,7 @@
 {% for examen in lista_examenes %}
   
   <tr>
+    <td>{{ examen.id }}</td>
     <td>{{ examen.nombre }}</td>
     <td>{{ examen.rut }}</td>
     <td>{{ examen.edad }}</td>
@@ -15,7 +16,7 @@
     <td>
       <button type="button"
               class="btn btn-danger btn-sm js-delete"
-              data-url="{% url 'app:eliminar_examen' examen.rut %}">
+              data-url="{% url 'app:eliminar_examen' id=examen.id %}">
         <span class="glyphicon glyphicon-trash"></span> Eliminar
       </button>
     </td>

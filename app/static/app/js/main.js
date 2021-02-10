@@ -14,6 +14,7 @@
           $("#modal-form").modal("show");
         },
         success: function (data) {
+          console.log(data)
            $("#modal-form .modal-content").html(data.html_formulario);
         }
       });
