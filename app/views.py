@@ -162,7 +162,7 @@ def agregar_usuario(request):
 
 def lista_pacientes(request):
     context = context_lista_pacientes()
-    return render( request, 'app/Agregar_usuario.html', context)
+    return render( request, 'app/lista_pacientes.html', context)
 
 
 def eliminar_pacientes(request, rut):
@@ -174,9 +174,9 @@ def eliminar_pacientes(request, rut):
         filename = "/app/data/pacientes.json"
         with open(str(settings.BASE_DIR) + filename, 'r') as file:
             data = json.load(file)
-        for paciente in data['pacientes']:
-            if str(paciente['rut']) == str(rut):
-                data['pacientes'].remove(paciente)
+        for pacientes in data['pacientes']:
+            if str(pacientes['rut']) == str(rut):
+                data['pacientes'].remove(pacientes)
                 break
             with open(str(settings.BASE_DIR) + filename, 'w') as file:
                 json.dump(data, file)
