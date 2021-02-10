@@ -24,9 +24,8 @@
                                 <button type="button" id="boton-js" class="btn btn-info mb-4"   data-toggle="modal" data-target="#form">
                                     Ingresar Examen
                                 </button>  
-                                <table class="table">
+                                <table class="table" id="tabla-datos">
                                     <thead class="thead-inverse">
-                                      
                                       <tr>
                                         <th>#</th>
                                         <th>Nombre</th>
@@ -35,8 +34,8 @@
                                         <th>Nombre Medico Tratante</th>
                                       </tr>
                                     </thead>
-                                    <tbody id="Datos">
-                                      {% comment %} hacer for de examenes {% endcomment %}
+                                    <tbody>
+                                          {% include 'app/Examenes_lista_parcial.html' %}
                                     </tbody>
                                   </table>
                             </div>

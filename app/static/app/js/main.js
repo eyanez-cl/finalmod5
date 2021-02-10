@@ -10,8 +10,30 @@ $(function (){
             },
             success: function(data){
                 $("#modal-form .modal-content").html(data.html_formulario);
-                console.log(data)
             }
         })
     })
+
+    $("#modal-form").on("submit",".js-create-form",function(){
+        var form = $(this)
+        $.ajax({
+            url: form.attr("action"),
+            data: form.serialize(),
+            type: form.attr("method"),
+            dataType: 'json',
+            success:function(data){
+                console.log(data)
+                if(data.formulario_is_valid){
+                    console.log(typeof(data.html_examenes_list))
+                    //$("#tabla-datos tbody").html(data.html_formulario)
+                    $("#tabla-datos tbody").html(data.html_examenes_list)
+                    $("#modal-form").modal("hide");
+                }
+                else{
+                    $("#modal-form .modal-content").html(data.html_formulario)
+                }
+            }
+        });
+        return false;
+    });
 });

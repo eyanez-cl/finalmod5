@@ -1,6 +1,17 @@
-% for examen in lista_examenes %}
+
+
+{% for examen in lista_examenes %}
+  
   <tr>
     <td>{{ examen.nombre }}</td>
+    <td>{{ examen.rut }}</td>
+    <td>{{ examen.edad }}</td>
+    <td>{{ examen.fecha }}</td>
+    <td>{{ examen.hemograma }}</td>
+    <td>{{ examen.orina }}</td>
+    <td>{{ examen.colesterolhdl }}</td>
+    <td>{{ examen.colesterolldl}}</td>
+    <td>{{ examen.glucosa }}</td>
     
   </tr>
 {% empty %}

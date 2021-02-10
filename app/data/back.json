@@ -1,0 +1,24 @@
+{
+    "pacientes": [
+        {
+            "correo": "juanito@awake.cl",
+            "clave": "123456",
+            "rut": "00.000.000-0",
+            "nombre": "Juan",
+            "edad": 57,
+            "fecha_nacimiento": "2020-12-12",
+            "examenes": [
+                {
+                    "fecha": "2020-12-01",
+                    "hemograma": 140,
+                    "orina": 200,
+                    "colesterol": {
+                        "bueno": 200,
+                        "malo": 100
+                    },
+                    "glucosa": 150
+                }
+            ]
+        }
+    ]
+}
