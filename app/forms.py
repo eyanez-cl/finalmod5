@@ -36,18 +36,17 @@ class Examen(forms.Form):
     
     
 class FormularioPacientes(forms.Form):
-    nombre = forms.CharField(label="nombre")
-    rut = forms.CharField(label="Rut")
-    edad = forms.IntegerField(label="Edad")
-    fecha_nacimiento = forms.DateField(label="Fecha_naciemiento")
-    fecha_toma_examen = forms.DateField(label="Fecha_toma_examen")
-    hemograma =forms.DateField(label="Hemograma")
-    orina = forms.IntegerField(label="Orina")
-    colesterol_ldl = forms.IntegerField(label="Colesterol_ldl" )
-    colesterol_hdl = forms.IntegerField(label="Colesterol_hdl")
-    glucosa = forms.IntegerField(label="Glocusa")
+    nombre = forms.CharField(validators=[validators.MinLengthValidator(2,"Su nombre debe poseer mas de 2 caracteres")])
+    rut = forms.CharField()
+    edad = forms.IntegerField()
+    fecha_nacimiento = forms.DateField()
+    hemograma =forms.IntegerField()
+    orina = forms.IntegerField()
+    colesterol_ldl = forms.IntegerField()
+    colesterol_hdl = forms.IntegerField()
+    glucosa = forms.IntegerField()
     
-    
+    '''
     nombre.widget.attrs.update({'class': 'form-control'})
     rut.widget.attrs.update({'class': 'form-control'})
     edad.widget.attrs.update({'class': 'form-control'})
@@ -58,7 +57,7 @@ class FormularioPacientes(forms.Form):
     colesterol_ldl.widget.attrs.update({'class': 'form-control'})
     colesterol_hdl.widget.attrs.update({'class': 'form-control'})
     glucosa.widget.attrs.update({'class': 'form-control'})
-    
+   ''' 
     
     
     

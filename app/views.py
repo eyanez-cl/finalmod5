@@ -116,11 +116,22 @@ def crear_examen(request):
     return JsonResponse(data)
 
 
+
+def context_lista_pacientes():
+    filename = "/app/data/pacientes.json"
+    with open(str(settings.BASE_DIR) + filename, 'r') as file:
+        pacientes = json.load(file)
+    context= {'lista_pacientes': pacientes['pacientes']}
+    return context
+    
+
 def agregar_usuario(request):
-    data = dict()
+    
     if request.method == 'GET':
         formulario = FormularioPacientes()
         context = {'formulario': formulario}
+        context.update(context_lista_pacientes())
+        print(context)
         return render(request,'app/Agregar_usuario.html',context)
 
     elif request.method == 'POST':
@@ -131,23 +142,45 @@ def agregar_usuario(request):
         if formulario_devuelto.is_valid() == True:
             datos_formulario = formulario_devuelto.cleaned_data
             datos_formulario['fecha_nacimiento']= datos_formulario['fecha_nacimiento'].strftime("%Y-%m-%d")
-            datos_formulario['fecha_toma_examen']= datos_formulario['fecha_toma_examen'].strftime("%Y-%m-%d")
+            
             print ('los datos limpios del formulario son: ', datos_formulario)
-            filename = 'app/data/pacientes.json'
+            filename = '/app/data/pacientes.json'
             with open(str(settings.BASE_DIR)+ filename, 'r') as file:
-                pacientes = json.load(file)
-                pacientes['pacientes'].append(datos_formulario)
+                data= json.load(file)
+                data['pacientes'].append(datos_formulario)
             with open(str(settings.BASE_DIR)+ filename, 'w') as file:
-                json.dump(pacientes, file)
-            context= {'lista pacientes': pacientes['pacientes']}
+                json.dump(data, file)
+                
+            return redirect('app:agregar_usuario')
             #return render(request, 'app/agregar_usuario_exitoso.html', context) 
         else:
             context= {'formulario': formulario_devuelto}
+            context.update(context_lista_pacientes())
             return render(request, 'app/Agregar_usuario.html', context)
         
-def agregar_usuario_exitoso(request):
-    pacientes = []
-    context= {'pacientes': pacientes}
-    return render(request, 'app/agregar_usuario_exitoso.html', context)
+
+
+def lista_pacientes(request):
+    context = context_lista_pacientes()
+    return render( request, 'app/Agregar_usuario.html', context)
+
+
+def eliminar_pacientes(request, rut):
+    if request.method == 'GET':
+        context = {'rut': rut}
+        return render(request, 'app/eliminar_pacientes.html', context)
+    
+    if request.method == 'POST':
+        filename = "/app/data/pacientes.json"
+        with open(str(settings.BASE_DIR) + filename, 'r') as file:
+            data = json.load(file)
+        for paciente in data['pacientes']:
+            if str(paciente['rut']) == str(rut):
+                data['pacientes'].remove(paciente)
+                break
+            with open(str(settings.BASE_DIR) + filename, 'w') as file:
+                json.dump(data, file)
+                
+            return redirect('app:lista_pacientes')
 
     
