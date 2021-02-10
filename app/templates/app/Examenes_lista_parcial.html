@@ -14,15 +14,11 @@
     <td>{{ examen.colesterolldl}}</td>
     <td>{{ examen.glucosa }}</td>
     <td>
-      <button type="button"
-              class="btn btn-danger btn-sm js-delete"
-              data-url="{% url 'app:eliminar_examen' id=examen.id %}">
-        <span class="glyphicon glyphicon-trash"></span> Eliminar
-      </button>
+      <a href="{% url 'app:eliminar_examen' pk=examen.id %}" class="btn btn-danger btn-sm ">Eliminar</a>
     </td>
   </tr>
 {% empty %}
   <tr>
-    <td colspan="7" class="text-center bg-warning">No hay examenes</td>
+    <td colspan="10" class="text-center bg-warning">No hay examenes</td>
   </tr>
 {% endfor %}

@@ -102,8 +102,7 @@ def crear_examen(request):
 
 
 
-def eliminar_examen(request,id):
-    data = dict()
+def eliminar_examen(request,pk):
     
     filename= "/app/data/base.json"
     with open(str(settings.BASE_DIR)+filename, 'r') as file:
@@ -112,31 +111,22 @@ def eliminar_examen(request,id):
     if request.method == "POST":
         for examen in pacientes['examenes']:
             print(examen['id'])
-            print(type(id))
+            print(pk)
             
-            if int(examen['id']) == str(int):
+            if str(examen['id']) == str(pk):
                 pacientes['examenes'].remove(examen)
                 break
             
         with open(str(settings.BASE_DIR)+filename, 'w') as file:
             json.dump(pacientes,file)
-            
-        data['formulario_is_valid'] = True
-        data['html_examenes_list'] = render_to_string('app/Examenes_lista_parcial.html',{
-                'lista_examenes': pacientes['examenes']
-                }) 
+        return redirect('app:examenes')
+
     else:
         
-        context = {'lista_examenes': pacientes['examenes']}
-        data['html_formulario'] = render_to_string('app/Eliminar_examen_parcial.html',
-                                               context,
-                                               request = request,)
-    print(data)
-    return JsonResponse(data)
+        context = {'pk': pk}
+        return render(request, 'app/Eliminar_examen_parcial.html', context)
             
     
-
-
 
 def agendar(request):
     return render(request,'app/Agendar.html')
