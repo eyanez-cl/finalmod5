@@ -12,7 +12,13 @@
     <td>{{ examen.colesterolhdl }}</td>
     <td>{{ examen.colesterolldl}}</td>
     <td>{{ examen.glucosa }}</td>
-    
+    <td>
+      <button type="button"
+              class="btn btn-danger btn-sm js-delete"
+              data-url="{% url 'app:eliminar_examen' examen.rut %}">
+        <span class="glyphicon glyphicon-trash"></span> Eliminar
+      </button>
+    </td>
   </tr>
 {% empty %}
   <tr>
