@@ -1,0 +1,15 @@
+{
+    "pacientes": [
+        {
+            "nombre": "juantito",
+            "rut": "15896752-2",
+            "edad": "36",
+            "fecha": "1905-01-01",
+            "hemograma": "360",
+            "orina": "450",
+            "colesterolhdl": "450",
+            "colesterolldl": "65",
+            "glucosa": "110"
+        }
+    ]
+}

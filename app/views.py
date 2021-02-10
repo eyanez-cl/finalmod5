@@ -1,4 +1,5 @@
 import json
+from typing import ContextManager
 
 
 from django.shortcuts import render, redirect
@@ -119,7 +120,7 @@ def crear_examen(request):
 
 def context_lista_pacientes():
     filename = "/app/data/pacientes.json"
-    with open(str(settings.BASE_DIR) + filename, 'r') as file:
+    with open(str(settings.BASE_DIR)+filename, 'r') as file:
         pacientes = json.load(file)
     context= {'lista_pacientes': pacientes['pacientes']}
     return context
@@ -141,7 +142,7 @@ def agregar_usuario(request):
         
         if formulario_devuelto.is_valid() == True:
             datos_formulario = formulario_devuelto.cleaned_data
-            datos_formulario['fecha_nacimiento']= datos_formulario['fecha_nacimiento'].strftime("%Y-%m-%d")
+            datos_formulario['fecha']= datos_formulario['fecha'].strftime("%Y-%m-%d")
             
             print ('los datos limpios del formulario son: ', datos_formulario)
             filename = '/app/data/pacientes.json'
@@ -152,7 +153,7 @@ def agregar_usuario(request):
                 json.dump(data, file)
                 
             return redirect('app:agregar_usuario')
-            #return render(request, 'app/agregar_usuario_exitoso.html', context) 
+             
         else:
             context= {'formulario': formulario_devuelto}
             context.update(context_lista_pacientes())
@@ -166,6 +167,24 @@ def lista_pacientes(request):
 
 
 def eliminar_pacientes(request, rut):
+    
+    if request.method == "GET":
+        context = { 'rut': rut}
+        return render( request, 'app/eliminar_pacientes.html', context)
+    
+    if request.method == "POST":
+        filename ="/app/data/pacientes.json"
+        with open(str(settings.BASE_DIR)+filename, 'r') as file:
+            data=json.load(file)
+        for paciente in data['pacientes']:
+            if str(paciente['rut']) == rut:
+                data['pacientes'].remove(paciente)
+                break
+        with open(str(settings.BASE_DIR)+filename, 'w') as file:
+            json.dump(data, file)
+        return redirect('app:lista_pacientes')
+
+#def eliminar_pacientes(request, rut):
     if request.method == 'GET':
         context = {'rut': rut}
         return render(request, 'app/eliminar_pacientes.html', context)
@@ -174,9 +193,11 @@ def eliminar_pacientes(request, rut):
         filename = "/app/data/pacientes.json"
         with open(str(settings.BASE_DIR) + filename, 'r') as file:
             data = json.load(file)
-        for pacientes in data['pacientes']:
-            if str(pacientes['rut']) == str(rut):
-                data['pacientes'].remove(pacientes)
+        for paciente in data['pacientes']:
+            print(paciente)
+            if str(paciente['rut']) == str(rut):
+                
+                data['pacientes'].remove(paciente)
                 break
             with open(str(settings.BASE_DIR) + filename, 'w') as file:
                 json.dump(data, file)
