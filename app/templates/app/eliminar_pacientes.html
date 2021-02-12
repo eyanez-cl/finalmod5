@@ -1,0 +1,71 @@
+{% extends "base_privada.html" %}
+{% load static %}
+
+
+        {% block imagenperfil %}
+            <img class="img-fluid rounded" src="{% static 'app/img/profe luis.jpg' %}">
+        {% endblock imagenperfil %}
+
+        <!-- MAIN -->
+        {% block main %}
+
+        <div class="col py-3">
+            <div class="block-header">
+                <h2>Examenes</h2>
+                <small class="text-muted"></small>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 col-md12 col-sm-12">
+                    <div class="card">
+                        <div class="body">
+                            <div class="row">
+                                
+                                <table class="table">
+                                    <thead class="thead-inverse">
+                                      
+                                      <tr>
+                                    <form action="{% url 'app:eliminar_pacientes' rut=rut %}" method="POST">
+                                      {% csrf_token %}
+                                      <h2>Está seguro de eliminar al paciente con numero de rut = {{rut}}?</h2>
+                                      <input type="submit" value='Sí'>
+                                      </tr>
+                                    </thead>
+                                    
+                                  </table>
+                            </div>
+                        </div>
+                    
+                          <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                               
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--row-->
+        <!-- Main Col END -->
+    </div>
+    <!-- body-row END -->
+    {% endblock main %}
+    
+    {%block footer%}
+    <footer class="footer fixed.bottom bg-dark text-center">
+        <p class="text-muted">&copy; 2020 Awakelab.</p>
+        <p class="text-muted">Grupo Full Stack Python</p>
+    </footer>
+    {% endblock footer %}
+
+ 
+    {% block script %}   
+    <script src="{% static 'app/js/main.js' %}"></script>
+    {% endblock script %}
+</body>
+
+</html>

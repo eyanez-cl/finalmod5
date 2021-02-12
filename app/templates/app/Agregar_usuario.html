@@ -21,22 +21,44 @@
                     <div class="card">
                         <div class="body">
                             <div class="row">
-                                <button type="button" id="boton-js" class="btn btn-info mb-4"   data-toggle="modal" data-target="#form">
-                                    Ingresar Usuario
-                                </button>  
-                                <table class="table">
+                              <form id="formulario" class="col-md-4" method="POST" novalidate>
+                                     {% csrf_token %}
+                                        <table>
+                                          {{formulario.as_table}}
+                                        </table>
+                                        
+                                        <input type="hidden" name="elemento" value="Paciente">
+                                        <button type="submit" class="btn btn-primary mb-3">Agregar</button>
+                                     
+                                </form>
+                                <table class="table col-md-8">
                                     <thead class="thead-inverse">
-                                      
                                       <tr>
-                                        <th>#</th>
+                                        <th>ID</th>
                                         <th>Nombre</th>
+                                        <th>Correo</th>
+                                        <th>Clave</th>
                                         <th>Rut</th>
-                                        <th>Tipo de Examen</th>
-                                        <th>Nombre Medico Tratante</th>
+                                        <th>Edad</th>
+                                        <th>Fecha</th>
                                       </tr>
                                     </thead>
                                     <tbody id="Datos">
-                                      {% comment %} hacer for de examenes {% endcomment %}
+                                      {% for pacientes in lista_pacientes %}
+                                       <tr>
+                                          <td>{{ pacientes.id }}</td>
+                                          <td>{{ pacientes.nombre }}</td>
+                                           <td>{{ pacientes.correo }}</td>
+                                          <td>{{ pacientes.clave }}</td>
+                                         
+                                          <td>{{pacientes.rut }}</td>
+                                          <td>{{pacientes.edad }}</td>
+                                          <td>{{pacientes.fecha }}</td>
+                                          <td>
+                                            <a href="{% url 'app:eliminar_pacientes' rut=pacientes.rut %}" class="btn btn-dark">Borrar</a>
+                                          <td/>
+                                      <tr>
+                                      {% endfor %}
                                     </tbody>
                                   </table>
                             </div>

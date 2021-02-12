@@ -1,0 +1,23 @@
+<form method="POST" action="{% url 'app:private' %}">
+ {% csrf_token %}
+ <div class="container"> 
+        <h4 class="text-center">Cambiar Perfil<h4>
+        <div class="input-group  mb-3"> 
+           <select  class="form-control" name="usuarios">
+            {% for usuario in perfiles %}
+              
+                <option value={{usuario.id}}>{{ usuario.nombre }}</option>
+            
+            {% endfor %}
+               
+                <option selected="selected"> Sin Perfil </option>
+            
+            </select> 
+            <div class="input-group-append"> 
+                <button type="submit" value="cargar usuarios" class="btn btn-primary">Enviar</button>
+            </div> 
+          
+        </div> 
+</div> 
+  
+</form>

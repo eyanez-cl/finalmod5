@@ -12,19 +12,19 @@
                 <h2>Estadisticas de Examenes</h2>
                 <small class="text-muted"></small>
             </div>
-
+        
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <h2 class="text-center">Glucosa</h2>
-                    <canvas id="Azucar" width="400" height="400"></canvas>
+                    <canvas id="glucosa" width="400" height="400"></canvas>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
-                    <h2 class="text-center">Presion Arterial</h2>
-                    <canvas id="Presion" width="400" height="400"></canvas>
+                    <h2 class="text-center">Hemograma</h2>
+                    <canvas id="hemograma" width="400" height="400"></canvas>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
-                    <h2 class="text-center">Perfil Renal</h2>
-                    <canvas id="PerfilRenal" width="400" height="400"></canvas>
+                    <h2 class="text-center">Orina</h2>
+                    <canvas id="orina" width="400" height="400"></canvas>
                 </div>
             </div>
         </div>
@@ -44,8 +44,72 @@
 
     
     {% block script %}
+
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
-        <script src="{% static 'app/js/graficos.js' %}"></script>
+
+
+<script>
+
+
+const glucosa = document.getElementById('glucosa');
+const hemograma = document.getElementById('hemograma');
+const orina = document.getElementById('orina');
+
+const dataglucosa = {{data.glucosa | safe }}
+const datahemograma = {{data.hemograma | safe }}
+const dataorina = {{data.orina | safe }}
+const meses = {{labels | safe }}
+const barType =  ['bar','line','pie']
+
+function chars(id, datos,dataLabel,dataType){
+    var ctx = id.getContext('2d');
+     new Chart(ctx, {
+        type: dataType,
+        data: {
+            labels: dataLabel,
+            datasets: [{
+                label: '% de muestras',
+                data: datos,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+   chars(glucosa,dataglucosa,meses,barType[0]);
+   chars(hemograma,datahemograma,meses,barType[1]);
+   chars(orina,dataorina,meses,barType[2]);
+
+});
+
+</script>
+
     {% endblock script %}
 
 </body>

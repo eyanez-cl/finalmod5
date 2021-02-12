@@ -7,12 +7,12 @@
     <td>{{ examen.nombre }}</td>
     <td>{{ examen.rut }}</td>
     <td>{{ examen.edad }}</td>
-    <td>{{ examen.fecha }}</td>
-    <td>{{ examen.hemograma }}</td>
-    <td>{{ examen.orina }}</td>
-    <td>{{ examen.colesterolhdl }}</td>
-    <td>{{ examen.colesterolldl}}</td>
-    <td>{{ examen.glucosa }}</td>
+    <td>{{ examen.examenes.0.fecha }}</td>
+    <td>{{ examen.examenes.0.hemograma }}</td>
+    <td>{{ examen.examenes.0.orina }}</td>
+    <td>{{ examen.examenes.0.colesterolhdl }}</td>
+    <td>{{ examen.examenes.0.colesterolldl}}</td>
+    <td>{{ examen.examenes.0.glucosa }}</td>
     <td>
       <a href="{% url 'app:eliminar_examen' pk=examen.id %}" class="btn btn-danger btn-sm ">Eliminar</a>
     </td>

@@ -1,1 +1,57 @@
-{"ultimo_id": 10, "examenes": []}
+{
+    "ultimo_id": 45,
+    "pacientes": [
+        {
+            "nombre": "Jonatan Olave",
+            "correo": "jona@wake.com",
+            "clave": "123456",
+            "rut": "30580970-2",
+            "edad": 30,
+            "fecha": "2020-12-05",
+            "direccion": "las carmelitas valpo",
+            "ocupacion": "redes y python master",
+            "telefono": "9405653554",
+            "foto": "https://www.awakelab.cl/wp-content/uploads/2020/12/Jonathan.jpg",
+            "resumen": "djqlwjdlkjwqdkljwq\r\nwqjdpojwqpdowjqpdojowpqjdpojwopqjdpojwqdopwj\r\ndjqwpjdpowqjpdojopwqjpdojopdwjowqjpdojopwqjd\r\nqdjqwpjdopjwqpdopwdjpowjqpdojwqpdopjqwpdjqw\r\ndjpwoqdpowqjdpowqj",
+            "educacion": "dowqjdopjqwpdojwq\r\ndqwpjdpowqjpdojwoqdowqjdpojqwpdojq\r\ndjqpwjdopjwqpdopwqjdojopwqjpdojopdwjj\r\ndqjwjdowqjdopjwqpdoopwqjpdojwqpdopwqjpdo",
+            "historial": "sdowuopdupwouqdowpdqjowqjdpowq\r\ndqpwjdopjqwpdpowqjdpowqjdpowjqpdojwq\r\ndjopwqdopwjqpdoowjqdowjqpdjopjqwdoj\r\njdqpwjdopwqjpdoopwqjpdoopwqjpdojqpwpow",
+            "examenes": [
+                {
+                    "fecha": "2021-02-12",
+                    "hemograma": "360",
+                    "orina": "450",
+                    "colesterolhdl": "450",
+                    "colesterolldl": "465",
+                    "glucosa": "490"
+                }
+            ],
+            "id": 44
+        },
+        {
+            "nombre": "Luis Jaraquemada",
+            "correo": "luis.jaraquemada@team.awakelab.cl",
+            "clave": "123456",
+            "rut": "1500698-2",
+            "edad": 100,
+            "fecha": "2020-12-05",
+            "direccion": "las cabras #3500",
+            "ocupacion": "Telecommunication Specialist",
+            "telefono": "+5698406646",
+            "foto": "http://yofui.com/CLFotosFiles/Evento00000866/YoFui0000000400844604-6.JPG",
+            "resumen": "BSc  and  MSc,  First  Honor  Degree  in  Electronics  and  Telecommunications  Engineering.  17+  years of   experience   in   the   Information   and   Communication   Technologies   (ICT)   field,   designing,  programming,  solving  complex  problems  and  as  Technical  Solutions  Dept.  Manager/Director  and  CTO  positions  in  medium  and  large  organizations.  Driven  by  objectives  to  reach  organization  targets,  based on  trust,  ethics  and  harmony  with  colleagues,  customers  and  surrounding  ecosystem.",
+            "educacion": "Universidad de Santiago de Chile\r\nBerklee College of Music\r\nThe University of Manchester",
+            "historial": "* Expert on Optical Networks - Electromagnetic Engineering - Analog & Digital Signals and Systems\r\n* Research Manager of Optical Communications Group, developing software for Nonlinear Optical Communication Systems.",
+            "examenes": [
+                {
+                    "fecha": "2021-02-11",
+                    "hemograma": "8000",
+                    "orina": "5800",
+                    "colesterolhdl": "380",
+                    "colesterolldl": "500",
+                    "glucosa": "4600"
+                }
+            ],
+            "id": 45
+        }
+    ]
+}

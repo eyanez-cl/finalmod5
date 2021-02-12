@@ -3,20 +3,33 @@
 
 
          {% block imagenperfil %}
-                <img class="img-fluid rounded" src="{% static 'app/img/profe luis.jpg' %}">
+                {% if perfiluser %}
+                    <img class="img-fluid rounded" src="{{perfiluser.perfil.foto}}">
+                {% else %}
+                    <img class="img-fluid rounded" src="{% static 'app/img/profe luis.jpg' %}">
+                {% endif %}
          {% endblock imagenperfil %}
 
         {% block main %}
         <div class="col py-3">
             <div class="block-header">
-                <h2>Perfil Paciente</h2>
+            {% include 'app/perfil_form.html' %}
+                {% if perfiluser %}
+                    <h2>Perfil {{perfiluser.perfil.nombre}}</h2>
+                {% else %}
+                    <h2>Perfil Luis Jaraquemada</h2>
+                {% endif %}
+
                 <small class="text-muted"></small>
             </div>
-    
             <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="card profile">
-                        <img class="img-fluid" src="{% static 'app/img/TiCn5dVo_400x400.jpg' %}" alt="">
+                        {% if perfiluser %}
+                            <img class="img-fluid" src="{{perfiluser.perfil.foto}}" alt="">
+                        {% else %}
+                            <img class="img-fluid" src="{% static 'app/img/TiCn5dVo_400x400.jpg' %}" alt="">
+                        {% endif %}
                     </div>
                     <div class="card">
                         <div class="header">
@@ -24,16 +37,39 @@
                         </div>
                         <div class="body">
                             <strong>Nombre</strong>
-                            <p>Luis Jaraquemada</p>
+                            {% if perfiluser %}
+                               <p>{{perfiluser.perfil.nombre}}</p>
+                            {% else %}
+                             <p>Luis Jaraquemada</p>
+                            {% endif %}
+                           
                             <strong>Occupation</strong>
-                            <p>Linux Lover</p>
+                            {% if perfiluser %}
+                               <p>{{perfiluser.perfil.ocupacion}}</p>
+                            {% else %}
+                                <p>Linux Lover</p>
+                            {% endif %}
+                            
                             <strong>Email</strong>
-                            <p>norecuerdoelEmail@gmail.com</p>
+                            {% if perfiluser %}
+                               <p>{{perfiluser.perfil.correo}}</p>
+                            {% else %}
+                                <p>norecuerdoelEmail@gmail.com</p>
+                            {% endif %}
                             <strong>Telefono</strong>
-                            <p>+5691506045</p>
+                            {% if perfiluser %}
+                               <p>{{perfiluser.perfil.telefono}}</p>
+                            {% else %}
+                                <p>+5691506045</p>
+                            {% endif %}
                             <hr>
                             <strong>Direccion</strong>
-                            <address>pasaje #1000,Santiago</address>
+                            {% if perfiluser %}
+                               <p>{{perfiluser.perfil.direccion}}</p>
+                            {% else %}
+                              <address>pasaje #1000,Santiago</address>
+                            {% endif %}
+                            
                         </div>
                     </div>
                 </div>
@@ -59,17 +95,15 @@
                                         <div class="wrap-reset">
                                             <div class="post-list">
                                                 <div class="post-box">
-                                                    <p>Paciente presenta hipertension y colesterol alto
-                                                        El 11 de Noviembre se deriva al cardiologo Mario Adad para toma de examenes
-                                                        El 22 de Noviembre se toma un electrocardiograma que aparece inconcluso
-                                                        Se le agenda citas para diciembre y Enero para toma de mas examenes
-                                                    </p>
-                                                    <p>Glucosa del Paciente se muestra alta
-                                                        El 11 de Noviembre se le deriva a la doctora Monserrat 
-                                                        La Doctora Monserrat lo encuentra prediabetico el 22 de Noviembre
-                                                        Se le da regimen al paciente 
-                                                        Se le agendan visitas periodicas para Diciembre y Enero
-                                                    </p>
+                                                    {% if perfiluser %}
+                                                        <p>{{perfiluser.perfil.resumen}}</p>
+                                                        {% else %}
+                                                         <p>Paciente presenta hipertension y colesterol alto
+                                                            El 11 de Noviembre se deriva al cardiologo Mario Adad para toma de examenes
+                                                            El 22 de Noviembre se toma un electrocardiograma que aparece inconcluso
+                                                            Se le agenda citas para diciembre y Enero para toma de mas examenes
+                                                        </p>
+                                                        {% endif %}
                                                     <hr>
                                                     <div class="post-box">
                                                         <h4>Reporte general</h4>
@@ -121,22 +155,15 @@
                                                     <hr>
                                                     <h4>Educacion</h4>
                                                     <ul class="dis">
+                                                    
+                                                    {% if perfiluser %}
+                                                      <li>{{perfiluser.perfil.educacion}}</li>
+                                                    {% else %}
                                                         <li> Ingeniero Informatico</li>
-                                                        <li>Universidad</li>
-                                                        <li>Diplomado en Python.</li>
-                                                        <li>Diplomado en Javascript</li>
-                                                        <li>Bootcamp Full stack Python.</li>
+                                                    {% endif %}
+                                                                    
                                                     </ul>
                                                     <hr>
-                                                    <h4>Historial de visitas</h4>
-                                                    <ul class="dis">
-                                                        <li>11 de Noviembre Doctor Garcia Adad</li>
-                                                        <li>22 de Noviembre Doctora Monserrat</li>
-                                                        <li>8 y 24 de Diciembre cita con Doctora Monserrat</li>
-                                                        <li>14 de Diciembre cita con Doctor Garcia Adad</li>
-                                                        <li>12 de Enero cita con Doctora Monserrat</li>
-                                                        <li>20 de Enero cita con Doctor Garcia Adad</li>
-                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>

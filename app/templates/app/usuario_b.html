@@ -1,0 +1,100 @@
+
+{% extends "base_privada.html" %}
+{% load static %}
+
+
+        {% block imagenperfil %}
+            <img class="img-fluid rounded" src="{% static 'app/img/profe luis.jpg' %}">
+        {% endblock imagenperfil %}
+
+        <!-- MAIN -->
+        {% block main %}
+
+        <div class="col py-3">
+            <div class="block-header">
+                <h2>Agregar Usuario</h2>
+                <small class="text-muted"></small>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 col-md12 col-sm-12">
+                    <div class="card">
+                        <div class="body">
+                            <div class="row">
+                                <a  href="{% url 'app:agregar_usuario' %}">Crear Registro</a>
+                    <br>
+                    <br>
+                      <div>
+                        <br>
+                        <form action="" method="POST" novalidate>
+                          {% csrf_token %}
+                          <table>
+                              {{formulario.as_table}}
+                          </table>
+                          <input type="hidden" name="elemento" value="Paciente">
+                          <input type="submit" value="Crear">
+                      </form>
+                        <br>
+                      </div>    
+                      <div class="container">
+                        <h3>Listado de Pacientes Actuales</h3>  
+                      </div>          
+                      < 
+                               
+                        <div class="row">
+                          
+                                        {% for pacientes in lista_pacientes %}
+                                        <div class="col-md-6 col-lg-3">
+                                            <div class="card">
+                                              
+                                                <h3 class="card-header"> N° de Rut {{pacientes.rut}}</h3>
+                                                <div class="card-body">
+                                                    <h4 class="card-title">Nombre: {{pacientes.nombre}}</h4>
+                                                    <p class="card-text">Edad: {{pacientes.edad}}</p>
+                                                    <p class="card-text">Fecha de Nacimiento{{pacientes.fecha}}</p>
+                                                    <p class="card-text">Hemograma: {{pacientes.hemograma}}</p>
+                                                    <p class="card-text">Orina: {{pacientes.orina}}</p>
+                                                    <p class="card-text">Colesterol LDL: {{pacientes.colesterol_ldl}}</p>
+                                                    <p class="card-text">Colesterol HDL: {{pacientes.colesterol_hdl}}</p>
+                                                    <p class="card-text">Glucosa: {{pacientes.glucosa}}</p>
+
+                                                    
+                                                    
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>     
+                    
+                          <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                               
+                              </div>
+                            
+                    
+                
+            
+
+        
+        <!--row-->
+        <!-- Main Col END -->
+   
+    <!-- body-row END -->
+    {% endblock main %}
+    
+    {%block footer%}
+    <footer class="footer fixed.bottom bg-dark text-center">
+        <p class="text-muted">&copy; 2020 Awakelab.</p>
+        <p class="text-muted">Grupo Full Stack Python</p>
+    </footer>
+    {% endblock footer %}
+
+ 
+    {% block script %}   
+    <script src="{% static 'app/js/main.js' %}"></script>
+    {% endblock script %}
+</body>
+
+</html>

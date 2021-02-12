@@ -15,7 +15,7 @@
           <label for="nombre">{{field.label}}</label>
           {{field}}
           {% for error in field.errors %}
-            <p class="help-block">{{ error }}</p>
+            <p class="alert alert-danger mt-2">{{ error }}</p>
           {% endfor %}
        </div>  
        
